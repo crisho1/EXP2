@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publicidad</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+
+    <!-- Popper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $("#enviar").click(function(){
+
+                $.get("https://www.themealdb.com/api/json/v1/1/categories.php",function(data){
+
+                    $.each(data.categories, function(i, item){
+                        $("#categorias").append("<tr><td>" + item.idCategory +"</td><td>" + item.strCategory + "</td>" +
+                            "<td>" + "<img src ='" + item.strCategoryThumb + "'>" + 
+                            "</td><td>" + item.strCategoryDescription + "</td></tr>")
+
+                    });
+
+                });
+
+            });
+
+        });
+
+    </script>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-sm navbar-light bg-white">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#opciones">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <a class="navbar-brand" href="index.html">
+            <img src="img/logo 3.avif" width="60" height="60" alt="" />
+        </a>
+        <div class="collapse navbar-collapse" id="opciones">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class=" nav-link" href="index.html">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="quienessomos.html">Quienes Somos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="galeria.html">Galeria</a>
+                </li>
+    
+                <li class="nav-item">
+                    <a class="nav-link" href="donde.html">Donde</a>
+                </li>
+    
+                <li class="nav-item">
+                    <a class="nav-link" href="contacto.html">Contacto</a>
+                </li>
+    
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="Apicomidas.html">Publicidad</a>
+                </li>
+    
+    
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+
+        <h1>Publicidad</h1><br>
+
+        <button type="button" id="enviar" class="btn btn-primary">Cargando Datos</button>
+        <br>
+        <table class="table" id="categorias">
+            <thead>
+                <th> IdCategoría</th>
+                <th> StrCategoría</th>
+                <th> Imagen Categoría</th>
+                <th> Descripción Categoría</th>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+
+    </div>
+    <br><br><br><br><br><br><br><br><br>
+
+    <div class="row">
+        <div class="container">
+            <footer class="bg-light text-center text-black">
+                <div class="container p-4 pb-0">
+                    <section class="mb-3">
+                        <!--  facebook -->
+                        <a class="btn btn-outline-light btn-floating m-1" href="https://es-la.facebook.com/" role="button"><i
+                                class="fab fa-facebook-f"><img src="img/facebook.png" width="30px"></i></a>
+                        <!-- instagram -->
+                        <a class="btn btn-outline-light btn-floating m-1" href="https://www.instagram.com/" role="button"><i
+                                class="fab fa-instagram"><img src="img/logoinsta.png" width="30px"></i></a>
+                        <!-- twitter -->
+                        <a class="btn btn-outline-light btn-floating m-1" href="https://twitter.com/?lang=es" role="button"><i
+                                class="fab fa-twitter"><img src="img/twitter-logo.png" width="30px"></i></a>
+                </div>
+                <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+                    Cristobal Salazar<br>
+                    © 2023 Copyright
+                </div>
+            </footer>
+        </div>
+
+</body>
+</html>

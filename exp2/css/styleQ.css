@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+#map {
+  height: 500px;
+  width: 100%;
+}
+
+body {
+
+
+  background-size: 100%;
+
+}
+
+
+.video {
+  align-content: center;
+  margin-top: 2cm;
+
+}
+
+
+.row {
+
+  margin: 0px 10px 10px 10px;
+  padding: 10px;
+
+}
